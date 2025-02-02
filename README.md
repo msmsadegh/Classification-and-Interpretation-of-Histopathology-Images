@@ -69,14 +69,14 @@ If you use this repository, please cite our paper:
 ```
 @article{your_paper,
   title={Breast Cancer Classification Using CNNs and Ensemble Learning},
-  author={Your Name and Others},
+  author={Mahdi Azmoodeh Kalati, Hasti Shabani, Mohammad Sadegh Maghareh, Zeynab Barzegar, Reza Lashgari},
   year={2025},
   journal={Scientific Reports}
 }
 ```
 
 ## Contact
-For questions or collaboration, reach out to: **your_email@example.com**
+For questions or collaboration, reach out to: **mahdiazmoodeh95@gmail.com**, **r_lashgari@sbu.ac.ir**,**maghareh@aut.ac.ir**
 
 ---
 This repository is developed for **academic research purposes** and aims to advance automated diagnostics in breast cancer classification.
