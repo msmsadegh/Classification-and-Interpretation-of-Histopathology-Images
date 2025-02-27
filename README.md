@@ -8,31 +8,6 @@ This repository contains the implementation of **breast cancer classification** 
 ## Branches
 We provide different branches corresponding to the methods explored in our study:
 
-- **`cnn_classification`**: Implements CNN-based classification using EfficientNet models.
-- **`cnn_ensemble`**: Incorporates unweighted averaging and majority voting for ensemble learning.
-- **`multi_cnn_mlp`**: Combines multiple CNN models with a Multi-Layer Perceptron (MLP) for enhanced classification accuracy.
-
-## Features
-- **Dataset**: Utilizes the **BreakHis dataset** for binary classification of histopathological images.
-- **CNN Models**: EfficientNetV1 & EfficientNetV2 architectures.
-- **Transfer Learning**: Pretrained CNN models fine-tuned for breast tissue classification.
-- **Data Augmentation**: Applied for better generalization and performance.
-- **Model Interpretability**: **Grad-CAM** is used to visualize critical regions influencing predictions.
-- **Ensemble Learning**: Majority voting & unweighted averaging to improve prediction robustness.
-
-## Getting Started
-### Prerequisites
-Ensure you have the following dependencies installed:
-```bash
-pip install tensorflow keras numpy pandas matplotlib opencv-python scikit-learn torch torchvision torchaudio albumentations
-```
-
-### Clone the Repository
-```bash
-git clone https://github.com/your_username/breast_cancer_cnn.git
-cd breast_cancer_cnn
-```
-
 ### Dataset Setup
 Download the **BreakHis dataset** from [here](https://web.inf.ufpr.br/vri/databases/breast-cancer-histopathological-database/) and place it in the `data/` directory.
 
