@@ -1,81 +1,116 @@
-# Classification-and-Interpretation-of-Histopathology-Images
+# Classification and Interpretation of Histopathology Images  
+### Leveraging Ensemble of EfficientNetV1 and EfficientNetV2 Models
 
-# Breast Cancer Classification Using CNNs and Ensemble Learning
+**A Deep Learning-Based Approach for Breast Cancer Histopathology Image Analysis**
 
-## Overview
-This repository contains the implementation of **breast cancer classification** using **Convolutional Neural Networks (CNNs)** and **ensemble learning** techniques. The study employs **EfficientNetV1 (b0-b4) and EfficientNetV2 (b0-b3)** architectures on the **BreakHis dataset**, leveraging **transfer learning, data augmentation, and Grad-CAM** for model interpretability.
+This repository contains the code, notebooks, and supplementary materials for our project on breast cancer histopathology image classification. Our approach leverages state-of-the-art EfficientNetV1 and EfficientNetV2 models, ensemble learning techniques, and Grad-CAM interpretability to achieve superior performance on the BreaKHis dataset. This work accompanies our paper submission to *Scientific Reports*.
 
-## Branches
-We provide different branches corresponding to the methods explored in our study:
+---
 
-- **`cnn_classification`**: Implements CNN-based classification using EfficientNet models.
-- **`cnn_ensemble`**: Incorporates unweighted averaging and majority voting for ensemble learning.
-- **`multi_cnn_mlp`**: Combines multiple CNN models with a Multi-Layer Perceptron (MLP) for enhanced classification accuracy.
+## Table of Contents
+- [Project Overview](#project-overview)
+- [Repository Structure](#repository-structure)
+- [Installation](#installation)
+- [Usage](#usage)
+  - [Running the Notebooks](#running-the-notebooks)
+  - [Source Scripts and Command-Line Usage](#source-scripts-and-command-line-usage)
+- [Key Results](#key-results)
+- [Citation](#citation)
+- [Contributions](#contributions)
+- [License](#license)
+- [Contact](#contact)
+- [Acknowledgements](#acknowledgements)
+- [Future Work](#future-work)
 
-## Features
-- **Dataset**: Utilizes the **BreakHis dataset** for binary classification of histopathological images.
-- **CNN Models**: EfficientNetV1 & EfficientNetV2 architectures.
-- **Transfer Learning**: Pretrained CNN models fine-tuned for breast tissue classification.
-- **Data Augmentation**: Applied for better generalization and performance.
-- **Model Interpretability**: **Grad-CAM** is used to visualize critical regions influencing predictions.
-- **Ensemble Learning**: Majority voting & unweighted averaging to improve prediction robustness.
+---
 
-## Getting Started
+## Project Overview
+In this project, we address the critical task of accurately classifying histopathology images into benign and malignant categories. Breast cancer is one of the leading causes of cancer-related deaths among women, and early detection plays a crucial role in treatment planning and patient care.
+
+**Key Highlights:**
+- **Models:** We use EfficientNetV1 (variants b0–b4) and EfficientNetV2 (variant b0-s) architectures, known for their efficiency and strong performance in image classification tasks.
+- **Ensemble Learning:** To further boost performance, ensemble methods such as unweighted averaging and hard (majority) voting are employed.
+- **Interpretability:** Grad-CAM is applied to provide visual explanations of the model’s decisions, increasing transparency and trust in our predictions.
+- **Dataset:** Our experiments are conducted on the widely used BreaKHis dataset, which comprises histopathological images of breast cancer at various magnifications.
+- **Results:** Our best ensemble model achieved an accuracy of 99.58%, demonstrating the effectiveness of our approach.
+
+---
+---
+
+## Installation
+
 ### Prerequisites
-Ensure you have the following dependencies installed:
-```bash
-pip install tensorflow keras numpy pandas matplotlib opencv-python scikit-learn torch torchvision torchaudio albumentations
-```
+- **Python 3.7+**
+- Recommended: A virtual environment (e.g., `venv` or `conda`)
+- GPU support is recommended for training (CUDA-enabled GPU)
 
 ### Clone the Repository
 ```bash
-git clone https://github.com/your_username/breast_cancer_cnn.git
-cd breast_cancer_cnn
-```
+git clone https://github.com/your-username/Classification-and-Interpretation-of-Histopathology-Images.git
+cd Classification-and-Interpretation-of-Histopathology-Images
 
-### Dataset Setup
-Download the **BreakHis dataset** from [here](https://web.inf.ufpr.br/vri/databases/breast-cancer-histopathological-database/) and place it in the `data/` directory.
+pip install -r requirements.txt
 
-### Training the Model
-To train a CNN model, run:
-```bash
-python train.py --model EfficientNetV2 --epochs 50 --batch_size 32
-```
 
-To train the ensemble model:
-```bash
-python ensemble_training.py
-```
+## 📊 Performance Summary
+| Model | Accuracy | Precision | Recall | F1-score |
+|-------|----------|------------|------------|------------|
+| EfficientNetV1-B4 | 99.07% | 99.38% | 99.26% | 99.32% |
+| EfficientNetV2-B1 | 99.32% | 99.51% | 99.51% | 99.51% |
+| **V1 Ensemble** | **99.49%** | **99.51%** | **99.75%** | **99.63%** |
+| **V2 Ensemble** | **99.58%** | **99.88%** | **99.51%** | **99.69%** |
 
-## Results
-The most effective ensemble model, using **majority voting from EfficientNetV2 (b0-S)**, achieved **99.62% accuracy** on the **BreakHis dataset**, surpassing conventional CNN-based approaches.
-
-## Repository Structure
-```
-├── data/                         # BreakHis dataset (to be downloaded manually)
-├── models/                       # Saved model checkpoints
-├── notebooks/                    # Jupyter notebooks for exploration
-├── src/
-│   ├── train.py                  # CNN training script
-│   ├── ensemble_training.py       # Ensemble training script
-│   ├── utils.py                   # Utility functions
-│   ├── grad_cam.py                # Grad-CAM visualization
-├── README.md                      # Project documentation
-└── requirements.txt                # Required dependencies
-```
-
-## Citation
-If you use this repository, please cite our paper:
-```
-@article{azmoodeh-kalati2025classification,
-  title={Classification and Interpretation of Histopathology Images: Leveraging Ensemble of EfficientNetV1 and EfficientNetV2 Models},
-  author={Azmoodeh-Kalati, Mahdi and Shabani, Hasti and Maghareh, Mohammad Sadegh and Barzegar, Zeynab and Lashgari, Reza},
-  year={2025}
-}
-```
-
-## Contact
-For questions or collaboration, reach out to: **mahdiazmoodeh95@gmail.com**, **r_lashgari@sbu.ac.ir**,**maghareh@aut.ac.ir**
 
 ---
-This repository is developed for **academic research purposes** and aims to advance automated diagnostics in breast cancer classification.
+
+## Notebook Descriptions
+Below is a detailed list of the notebooks included in the `notebooks/` directory:
+
+1. **cutfile.ipynb**  
+   *Data splitting to train, validation, and test sets.*  
+2. **breakhisefficientnetv1test1.ipynb**  
+   *Training and learning curves for EfficientNetV1 models (variants b0–b4).*  
+3. **breakhisefficientnetv2test1.ipynb**  
+   *Training and learning curves for EfficientNetV2 model (variant b0-s).*  
+4. **comparisonstained.ipynb**  
+   *Comparison of performance for EfficientNetV1b0 on Vahadane stained images versus unstained images.*  
+5. **multigradcam.ipynb**  
+   *Generates Grad-CAM for individual models on the test set and merges them with their prediction probabilities.*  
+6. **testv1v2report.ipynb**  
+   *Analysis of test results including confusion matrix, misclassified images, and overall model performance.*  
+7. **v1ensemble.ipynb**  
+   *Creation and evaluation of an ensemble for EfficientNetV1 models along with a detailed report.*  
+8. **v2ensemble.ipynb**  
+   *Creation and evaluation of an ensemble for EfficientNetV2 models along with a detailed report.*  
+9. **v1softhardvoting.ipynb**  
+   *Prediction using unweighted averaging and hard (majority) voting for V1 models with performance results.*  
+10. **v2softhardvoting.ipynb**  
+    *Prediction using unweighted averaging and hard (majority) voting for V2 models with performance results.*  
+
+---
+
+## Notebook Descriptions
+Below is a detailed list of the notebooks included in the `notebooks/` directory:
+
+1. **cutfile.ipynb**  
+   *Data splitting to train, validation, and test sets.*  
+2. **breakhisefficientnetv1test1.ipynb**  
+   *Training and learning curves for EfficientNetV1 models (variants b0–b4).*  
+3. **breakhisefficientnetv2test1.ipynb**  
+   *Training and learning curves for EfficientNetV2 model (variant b0-s).*  
+4. **comparisonstained.ipynb**  
+   *Comparison of performance for EfficientNetV1b0 on Vahadane stained images versus unstained images.*  
+5. **multigradcam.ipynb**  
+   *Generates Grad-CAM for individual models on the test set and merges them with their prediction probabilities.*  
+6. **testv1v2report.ipynb**  
+   *Analysis of test results including confusion matrix, misclassified images, and overall model performance.*  
+7. **v1ensemble.ipynb**  
+   *Creation and evaluation of an ensemble for EfficientNetV1 models along with a detailed report.*  
+8. **v2ensemble.ipynb**  
+   *Creation and evaluation of an ensemble for EfficientNetV2 models along with a detailed report.*  
+9. **v1softhardvoting.ipynb**  
+   *Prediction using unweighted averaging and hard (majority) voting for V1 models with performance results.*  
+10. **v2softhardvoting.ipynb**  
+    *Prediction using unweighted averaging and hard (majority) voting for V2 models with performance results.*  
+
+---
