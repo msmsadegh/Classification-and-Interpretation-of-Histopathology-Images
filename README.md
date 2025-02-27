@@ -79,3 +79,30 @@ For questions or collaboration, reach out to: **mahdiazmoodeh95@gmail.com**, **r
 
 ---
 This repository is developed for **academic research purposes** and aims to advance automated diagnostics in breast cancer classification.
+---
+
+## Notebook Descriptions
+Below is a detailed list of the notebooks included in the `notebooks/` directory:
+
+1. **cutfile.ipynb**  
+   *Data splitting to train, validation, and test sets.*  
+2. **breakhisefficientnetv1test1.ipynb**  
+   *Training and learning curves for EfficientNetV1 models (variants b0–b4).*  
+3. **breakhisefficientnetv2test1.ipynb**  
+   *Training and learning curves for EfficientNetV2 model (variant b0-s).*  
+4. **comparisonstained.ipynb**  
+   *Comparison of performance for EfficientNetV1b0 on Vahadane stained images versus unstained images.*  
+5. **multigradcam.ipynb**  
+   *Generates Grad-CAM for individual models on the test set and merges them with their prediction probabilities.*  
+6. **testv1v2report.ipynb**  
+   *Analysis of test results including confusion matrix, misclassified images, and overall model performance.*  
+7. **v1ensemble.ipynb**  
+   *Creation and evaluation of an ensemble for EfficientNetV1 models along with a detailed report.*  
+8. **v2ensemble.ipynb**  
+   *Creation and evaluation of an ensemble for EfficientNetV2 models along with a detailed report.*  
+9. **v1softhardvoting.ipynb**  
+   *Prediction using unweighted averaging and hard (majority) voting for V1 models with performance results.*  
+10. **v2softhardvoting.ipynb**  
+    *Prediction using unweighted averaging and hard (majority) voting for V2 models with performance results.*  
+
+---
