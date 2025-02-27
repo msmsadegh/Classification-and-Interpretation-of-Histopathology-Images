@@ -67,11 +67,10 @@ The most effective ensemble model, using **majority voting from EfficientNetV2 (
 ## Citation
 If you use this repository, please cite our paper:
 ```
-@article{your_paper,
-  title={Breast Cancer Classification Using CNNs and Ensemble Learning},
-  author={Mahdi Azmoodeh Kalati, Hasti Shabani, Mohammad Sadegh Maghareh, Zeynab Barzegar, Reza Lashgari},
-  year={2025},
-  journal={Scientific Reports}
+@article{azmoodeh-kalati2025classification,
+  title={Classification and Interpretation of Histopathology Images: Leveraging Ensemble of EfficientNetV1 and EfficientNetV2 Models},
+  author={Azmoodeh-Kalati, Mahdi and Shabani, Hasti and Maghareh, Mohammad Sadegh and Barzegar, Zeynab and Lashgari, Reza},
+  year={2025}
 }
 ```
 
