@@ -5,9 +5,6 @@
 ## Overview
 This repository contains the implementation of **breast cancer classification** using **Convolutional Neural Networks (CNNs)** and **ensemble learning** techniques. The study employs **EfficientNetV1 (b0-b4) and EfficientNetV2 (b0-b3)** architectures on the **BreakHis dataset**, leveraging **transfer learning, data augmentation, and Grad-CAM** for model interpretability.
 
-## Branches
-We provide different branches corresponding to the methods explored in our study:
-
 ### Dataset Setup
 Download the **BreakHis dataset** from [here](https://web.inf.ufpr.br/vri/databases/breast-cancer-histopathological-database/) and place it in the `data/` directory.
 
@@ -28,13 +25,7 @@ The most effective ensemble model, using **majority voting from EfficientNetV2 (
 ## Repository Structure
 ```
 ├── data/                         # BreakHis dataset (to be downloaded manually)
-├── models/                       # Saved model checkpoints
 ├── notebooks/                    # Jupyter notebooks for exploration
-├── src/
-│   ├── train.py                  # CNN training script
-│   ├── ensemble_training.py       # Ensemble training script
-│   ├── utils.py                   # Utility functions
-│   ├── grad_cam.py                # Grad-CAM visualization
 ├── README.md                      # Project documentation
 └── requirements.txt                # Required dependencies
 ```
